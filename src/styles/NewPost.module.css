@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+}
+
+.body {
+  width: calc(100% - 1rem);
+  padding: 0.5rem;
+
+  overflow: auto;
+
+  font-size: 1.5em;
+
+  border: none;
+  background: none;
+  outline: none;
+
+  resize: none;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+
+  margin-bottom: 1rem;
+
+  background: gray;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+}
+
+.tweet {
+  padding: 0.5rem 1rem;
+
+  font-size: 1em;
+
+  background-color: rgb(145, 25, 220);
+  transition: background-color 0.1s ease;
+
+  border-radius: 2rem;
+  border: none;
+}
+
+.tweet:hover {
+  background-color: rgb(124, 18, 190);
+}
+
+.tweet:active {
+  background-color: rgb(100, 9, 157);
+}
