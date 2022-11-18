@@ -4,10 +4,13 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
   flex-grow: 1;
+  width: min(100%, 32rem);
 }
 
 .footer {
