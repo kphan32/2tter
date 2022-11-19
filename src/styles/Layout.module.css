@@ -10,7 +10,10 @@
 
 .main {
   flex-grow: 1;
-  width: min(100%, 32rem);
+  width: min(100%, 40rem);
+
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
 
   overflow: scroll;
   scrollbar-width: 0;
@@ -20,14 +23,18 @@
   width: 100%;
 
   display: flex;
-  padding: 1rem 0;
-  border-top: 1px solid #222;
+  padding: 0.5rem 0;
+  border-top: 1px solid #444;
   justify-content: center;
   align-items: center;
 }
 
+.footer > a {
+  font-size: 0.85em;
+}
+
 .logo {
-  margin-left: 0.5rem;
+  margin-left: 0.2rem;
 }
 
 @media (prefers-color-scheme: dark) {

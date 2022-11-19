@@ -10,7 +10,6 @@ const Home = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Home</h1>
         <NewPost />
-        <div className={styles.spacer} />
         <Tweets />
       </div>
     </Layout>

@@ -30,7 +30,7 @@ const NewPost = () => {
         value={body}
         onChange={(e) => setBody(e.target.value)}
       ></TextareaAutosize>
-      <div className={styles.divider} />
+
       <div className={styles.buttons}>
         <button className={styles.tweet} onClick={onSubmit}>
           Tweet

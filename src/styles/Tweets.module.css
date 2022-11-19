@@ -4,10 +4,8 @@
 
 .card {
   padding: 1rem;
-  margin-bottom: 1rem;
 
-  border: 1px solid #888;
-  border-radius: 0.5rem;
+  border-bottom: 1px solid #444;
 }
 
 .header {
