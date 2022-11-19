@@ -11,6 +11,9 @@
 .main {
   flex-grow: 1;
   width: min(100%, 32rem);
+
+  overflow: scroll;
+  scrollbar-width: 0;
 }
 
 .footer {

@@ -3,6 +3,7 @@ const { createContext, useContext, useState, useEffect } = require("react");
 const defaultValue = {
   tweets: null,
   loading: true,
+  addTweet: (tweet) => {},
 };
 
 const context = createContext(defaultValue);
@@ -10,6 +11,10 @@ const context = createContext(defaultValue);
 const TweetsProvider = ({ children }) => {
   const [tweets, setTweets] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const addTweet = (tweet) => {
+    setTweets([...tweets, tweet]);
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,15 +26,15 @@ const TweetsProvider = ({ children }) => {
     }, 1000);
   }, [setTweets, setLoading]);
 
-  const ctx = { tweets, loading };
+  const ctx = { tweets, loading, addTweet };
 
   return <context.Provider value={ctx}>{children}</context.Provider>;
 };
 
 const useTweets = () => {
-  const { tweets, loading } = useContext(context);
+  const { tweets, loading, addTweet } = useContext(context);
 
-  return { tweets, loading };
+  return { tweets, loading, addTweet };
 };
 
 const tweet = (username, handle, body, createdAt) => {
