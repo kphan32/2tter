@@ -8,7 +8,25 @@
   align-items: center;
 }
 
+.header {
+  position: absolute;
+  top: 0;
+
+  height: 4rem;
+  width: min(100%, 40rem);
+
+  background-color: rgba(17, 17, 17, 0.5);
+
+  backdrop-filter: blur(2px);
+}
+
+.title {
+  margin: 1rem;
+}
+
 .main {
+  padding-top: 4rem;
+
   flex-grow: 1;
   width: min(100%, 40rem);
 
@@ -16,7 +34,6 @@
   border-right: 1px solid #444;
 
   overflow: scroll;
-  scrollbar-width: 0;
 }
 
 .footer {

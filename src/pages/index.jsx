@@ -6,9 +6,8 @@ import styles from "../styles/Home.module.css";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout title="Home">
       <div className={styles.container}>
-        <h1 className={styles.title}>Home</h1>
         <NewPost />
         <Posts />
       </div>

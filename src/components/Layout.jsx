@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import styles from "../styles/Layout.module.css";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ title, children }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +14,10 @@ export const Layout = ({ children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <header className={styles.header}>
+        <h1 className={styles.title}>{title}</h1>
+      </header>
 
       <main className={styles.main}>{children}</main>
 
