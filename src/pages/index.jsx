@@ -1,6 +1,6 @@
 import { Layout } from "../components/Layout";
 import NewPost from "../components/NewPost";
-import Tweets from "../components/Tweets";
+import Posts from "../components/Posts";
 
 import styles from "../styles/Home.module.css";
 
@@ -10,7 +10,7 @@ const Home = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Home</h1>
         <NewPost />
-        <Tweets />
+        <Posts />
       </div>
     </Layout>
   );

@@ -1,12 +1,12 @@
-import { TweetsProvider } from "../components/TweetProvider";
+import { PostsProvider } from "../components/PostProvider";
 
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <TweetsProvider>
+    <PostsProvider>
       <Component {...pageProps} />
-    </TweetsProvider>
+    </PostsProvider>
   );
 }
 

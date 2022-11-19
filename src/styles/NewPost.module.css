@@ -27,7 +27,7 @@
   justify-content: end;
 }
 
-.tweet {
+.post {
   padding: 0.5rem 1rem;
 
   font-size: 1em;
@@ -39,10 +39,10 @@
   border: none;
 }
 
-.tweet:hover {
+.post:hover {
   background-color: rgb(124, 18, 190);
 }
 
-.tweet:active {
+.post:active {
   background-color: rgb(100, 9, 157);
 }

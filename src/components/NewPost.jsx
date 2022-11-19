@@ -1,19 +1,19 @@
 import { useState } from "react";
 import TextareaAutosize from "react-autosize-textarea";
 
-import { useTweets } from "./TweetProvider";
+import { usePosts } from "./PostProvider";
 
 import styles from "../styles/NewPost.module.css";
 
 const NewPost = () => {
-  const { loading, addTweet } = useTweets();
+  const { loading, addPost } = usePosts();
 
   const [body, setBody] = useState("");
 
   const onSubmit = () => {
     if (loading || body === "") return;
 
-    addTweet({
+    addPost({
       username: "Kavin Phan",
       handle: "kphan",
       body,
@@ -32,8 +32,8 @@ const NewPost = () => {
       ></TextareaAutosize>
 
       <div className={styles.buttons}>
-        <button className={styles.tweet} onClick={onSubmit}>
-          Tweet
+        <button className={styles.post} onClick={onSubmit}>
+          Post
         </button>
       </div>
     </div>
