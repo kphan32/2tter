@@ -1,15 +1,16 @@
 .container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+
+  overflow: scroll;
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
 
   height: 4rem;
@@ -32,6 +33,4 @@
 
   border-left: 1px solid #444;
   border-right: 1px solid #444;
-
-  overflow: scroll;
 }
