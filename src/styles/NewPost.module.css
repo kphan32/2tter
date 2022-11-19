@@ -25,6 +25,11 @@
   justify-content: end;
 }
 
+.counter {
+  width: 1.75rem;
+  margin-right: 0.5rem;
+}
+
 .post {
   padding: 0.5rem 1rem;
 

@@ -1,6 +1,7 @@
 import { PostsProvider } from "../components/PostProvider";
 
 import "../styles/globals.css";
+import "react-circular-progressbar/dist/styles.css";
 
 function MyApp({ Component, pageProps }) {
   return (
