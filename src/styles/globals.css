@@ -17,3 +17,7 @@ body {
     background: #111111;
   }
 }
+
+p {
+  margin: 0;
+}

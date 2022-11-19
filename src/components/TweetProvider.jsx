@@ -13,7 +13,10 @@ const TweetsProvider = ({ children }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setTweets([tweet("kphan", "this is a test tweet")]);
+      setTweets([
+        tweet("Kavin Phan", "kphan", "this is a test tweet 1"),
+        tweet("Kebin T", "yakuzi", "this is a test tweet 2"),
+      ]);
       setLoading(false);
     }, 1000);
   }, [setTweets, setLoading]);
@@ -29,10 +32,13 @@ const useTweets = () => {
   return { tweets, loading };
 };
 
-const tweet = (handle, body) => {
-  {
-    handle, body;
-  }
+const tweet = (username, handle, body, createdAt) => {
+  return {
+    username,
+    handle,
+    body,
+    createdAt,
+  };
 };
 
 export { TweetsProvider, useTweets };

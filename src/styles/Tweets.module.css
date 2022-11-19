@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+}
+
+.card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  border: 1px solid #888;
+  border-radius: 0.5rem;
+}
+
+.header {
+  display: flex;
+}
+
+.username {
+  margin-right: 0.5rem;
+
+  font-weight: bold;
+}
+
+.handle {
+  color: #999;
+}
+
+.body {
+  margin-top: 0.5rem;
+}
