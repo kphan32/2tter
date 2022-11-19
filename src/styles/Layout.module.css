@@ -13,7 +13,6 @@
   position: fixed;
   top: 0;
 
-  height: 4rem;
   width: min(100%, 40rem);
 
   background-color: rgba(17, 17, 17, 0.5);
@@ -22,7 +21,9 @@
 }
 
 .title {
-  margin: 1rem;
+  margin: 0.75rem;
+
+  font-size: 1.25em;
 }
 
 .main {
