@@ -1,6 +1,8 @@
 import { Layout } from "../components/Layout";
 import NewPost from "../components/NewPost";
 
+import { useTweets } from "../components/TweetProvider";
+
 import styles from "../styles/Home.module.css";
 
 const Home = () => {
