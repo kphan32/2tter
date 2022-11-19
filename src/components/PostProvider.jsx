@@ -21,6 +21,22 @@ const PostsProvider = ({ children }) => {
       setPosts([
         post("Kavin Phan", "kphan", "this is a test post 1"),
         post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
+        post("Kavin Phan", "kphan", "this is a test post 1"),
+        post("Kebin T", "yakuzi", "this is a test post 2"),
       ]);
       setLoading(false);
     }, 1000);
