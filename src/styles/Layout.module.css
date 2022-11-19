@@ -13,11 +13,13 @@
   position: fixed;
   top: 0;
 
+  margin: 3rem;
+
   width: min(100%, 40rem);
 
   background-color: rgba(17, 17, 17, 0.5);
 
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(4px);
 }
 
 .title {
@@ -27,7 +29,7 @@
 }
 
 .main {
-  padding-top: 4rem;
+  padding-top: 3rem;
 
   flex-grow: 1;
   width: min(100%, 40rem);
