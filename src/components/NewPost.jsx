@@ -13,19 +13,40 @@ const OVER_COLOR = "rgb(255, 0, 0)";
 const NewPost = () => {
   const { loading, addPost } = usePosts();
 
+  const [username, setUsername] = useState("Kavin Phan");
+  const [handle, setHandle] = useState("kavphan");
+
   const [body, setBody] = useState("");
 
   const progress = body.length / MAX_CHAR_COUNT;
   const over = progress >= 1;
 
   const onSubmit = () => {
-    if (loading || body === "") return;
+    if (loading || body === "" || username == "" || handle == "") return;
 
-    addPost({
-      username: "Kavin Phan",
-      handle: "kphan",
-      body,
-    });
+    (async () => {
+      const resp = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/tweets`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            handle,
+            username,
+            body,
+          }),
+        }
+      );
+
+      if (resp.status != 200) {
+        return console.error(resp);
+      }
+
+      const newPost = await resp.json();
+      addPost(newPost);
+    })();
 
     setBody("");
   };
@@ -40,6 +61,16 @@ const NewPost = () => {
       ></TextareaAutosize>
 
       <div className={styles.buttons}>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="text"
+          value={handle}
+          onChange={(e) => setHandle(e.target.value)}
+        />
         <CircularProgressbar
           className={styles.counter}
           value={progress}

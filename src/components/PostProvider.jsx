@@ -14,6 +14,10 @@ const PostsProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const addPost = (post) => {
+    setPosts([...posts, post]);
+  };
+
   useEffect(() => {
     (async () => {
       const resp = await fetch(
@@ -36,15 +40,15 @@ const PostsProvider = ({ children }) => {
     })();
   }, [setPosts, setLoading]);
 
-  const ctx = { posts, loading, error };
+  const ctx = { posts, loading, error, addPost };
 
   return <context.Provider value={ctx}>{children}</context.Provider>;
 };
 
 const usePosts = () => {
-  const { posts, loading, error } = useContext(context);
+  const { posts, loading, error, addPost } = useContext(context);
 
-  return { posts, loading, error };
+  return { posts, loading, error, addPost };
 };
 
 export { PostsProvider as PostsProvider, usePosts };
