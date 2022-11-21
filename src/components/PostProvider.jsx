@@ -3,6 +3,7 @@ const { createContext, useContext, useState, useEffect } = require("react");
 const defaultValue = {
   posts: null,
   loading: true,
+  error: null,
   addPost: (post) => {},
 };
 
@@ -11,55 +12,39 @@ const context = createContext(defaultValue);
 const PostsProvider = ({ children }) => {
   const [posts, setPosts] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const addPost = (post) => {
-    setPosts([...posts, post]);
-  };
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      setPosts([
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-        post("Kavin Phan", "kphan", "this is a test post 1"),
-        post("Kebin T", "yakuzi", "this is a test post 2"),
-      ]);
+    (async () => {
+      const resp = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/tweets`,
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+          },
+        }
+      );
+
+      if (resp.status != 200) {
+        return setError(resp.status);
+      }
+
+      const data = await resp.json();
+      setPosts(data);
       setLoading(false);
-    }, 1000);
+    })();
   }, [setPosts, setLoading]);
 
-  const ctx = { posts: posts, loading, addPost };
+  const ctx = { posts, loading, error };
 
   return <context.Provider value={ctx}>{children}</context.Provider>;
 };
 
 const usePosts = () => {
-  const { posts, loading, addPost } = useContext(context);
+  const { posts, loading, error } = useContext(context);
 
-  return { posts, loading, addPost };
-};
-
-const post = (username, handle, body, createdAt) => {
-  return {
-    username,
-    handle,
-    body,
-    createdAt,
-  };
+  return { posts, loading, error };
 };
 
 export { PostsProvider as PostsProvider, usePosts };
