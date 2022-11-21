@@ -6,6 +6,8 @@
   padding: 1rem;
 
   border-top: 1px solid #444;
+
+  overflow-wrap: break-word;
 }
 
 .header {
